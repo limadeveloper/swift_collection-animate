@@ -38,15 +38,15 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) 
         
-        var imageView = cell.viewWithTag(1) as! UIImageView
+        let imageView = cell.viewWithTag(1) as! UIImageView
         imageView.image = UIImage(named: imagesArray[indexPath.row])
         
-        var textView = cell.viewWithTag(2) as! UITextView
+        let textView = cell.viewWithTag(2) as! UITextView
         textView.scrollEnabled = false
         
-        var backButton = cell.viewWithTag(3) as! UIButton
+        let backButton = cell.viewWithTag(3) as! UIButton
         backButton.hidden = true
         
         return cell
@@ -55,19 +55,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK:
     // MARK: collection view delegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var cell = collectionView.cellForItemAtIndexPath(indexPath)
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
         
         cell?.superview?.bringSubviewToFront(cell!)
         
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: nil, animations: ({
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [], animations: ({
             
             cell?.frame = collectionView.bounds
             collectionView.scrollEnabled = false
             
-            var textView = cell!.viewWithTag(2) as! UITextView
+            let textView = cell!.viewWithTag(2) as! UITextView
             textView.scrollEnabled = false
             
-            var backButton = cell!.viewWithTag(3) as! UIButton
+            let backButton = cell!.viewWithTag(3) as! UIButton
             backButton.hidden = false
             backButton.addTarget(self, action: "backButtonAction", forControlEvents: UIControlEvents.TouchUpInside)
             
@@ -77,9 +77,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK:
     // MARK: methods
     func backButtonAction() {
-        var indexPath = collection.indexPathsForSelectedItems() as! [NSIndexPath]
+        let indexPath = collection.indexPathsForSelectedItems() as [NSIndexPath]?
         collection.scrollEnabled = true
-        collection.reloadItemsAtIndexPaths(indexPath)
+        collection.reloadItemsAtIndexPaths(indexPath!)
     }
 
 }

@@ -215,6 +215,8 @@
 		09D615951B229806004D2B5A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "John Silva";
 				TargetAttributes = {
@@ -487,6 +489,7 @@
 				09D615BE1B229806004D2B5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09D615BF1B229806004D2B5A /* Build configuration list for PBXNativeTarget "CollectionViewAnimateTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +498,7 @@
 				09D615C11B229806004D2B5A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
